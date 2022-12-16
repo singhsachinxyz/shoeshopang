@@ -1,0 +1,8 @@
+button{
+    background-color: rgb(151, 198, 223);
+    border: solid rgb(131, 178, 226) 1px;
+}
+img{
+    max-height: 80vh;
+    border: solid rgb(4, 72, 139) 1px;
+}

@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="text-center m-auto w-50 mt-3">
+    <h1>Login :</h1>
+    <hr class="w-25 m-auto mb-5">
+    <form [formGroup]="loginForm">
+    E-mail:
+    <input type="text" formControlName="name" class="form-control my-2">
+    Password:
+    <input type="text" formControlName="pwd" class="form-control my-2">
+    <button (click)="loginF()" class="btn btn-primary my-2 mb-5">Login</button>
+    </form>
+    </div>
+</div>

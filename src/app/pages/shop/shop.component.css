@@ -1,0 +1,13 @@
+.card:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.07);
+}
+.card{
+    border: solid rgb(131, 178, 226) 1px;
+    background-color: rgb(194, 223, 245);
+}
+a, button{
+    background-color: rgb(151, 198, 223);
+    border: solid rgb(131, 178, 226) 1px;
+    margin: 3px;
+}

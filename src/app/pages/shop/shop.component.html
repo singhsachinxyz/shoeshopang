@@ -1,0 +1,24 @@
+<div class="container text-center">
+    <button class="btn btn-sm btn-primary text-dark mx-2 my-3" (click)="catname=cat" *ngFor="let cat of cat">{{cat|titlecase}}</button>
+  <button class="btn btn-sm btn-primary text-dark mx-2 my-3" (click)="catname=undefined">All Products</button> <br>
+  <input type="text" class="form-control w-50 m-auto" placeholder="Type to search..." id="search" [(ngModel)]="searchText">
+
+    <div class="row">
+        <ng-container *ngFor="let shoe of Shoes|category:catname">
+            <div class="col-sm-6 col-md-4 col-lg-3 col-12 mt-3" *ngIf="shoe.title.trim().toLowerCase().includes(searchText.toLowerCase())">
+                <div class="card m-auto" style="width: 14rem;">
+                    <img src="{{shoe.image}}" height="150px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 style="white-space: nowrap; overflow:hidden; text-overflow:ellipsis; max-width: 100ch;"
+                        class="card-title">{{shoe.title}}</h5>
+                        <p style="line-height: 1.5em; height: 3em; overflow: hidden;" class="card-text">{{shoe.description}}
+                        </p>
+                        <p class="card-text">Price :{{shoe.price|currency:'INR'}}</p>
+                        <a routerLink="/viewproduct/{{shoe.id}}" class="btn btn-sm btn-primary text-dark">View Prod</a>
+                        <button class="btn btn-sm btn-primary text-dark" (click)="add(shoe)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container" *ngFor="let shoe of Shoes">
+    <div *ngIf="shoe.id==shoeid.id">
+        <div class="row">
+            <div class="col-sm-12 col-md-5 col-lg-5 col-12 p-5">
+                <img src="{{shoe.image}}" width="100%" alt="" class="rounded">
+            </div>
+            <div class="col-sm-12 col-md-7 col-lg-7 col-12 m-auto">
+                <h1>{{shoe.title}}</h1>
+                <h3>Price : {{shoe.price|currency:'INR'}}</h3>
+                <h3>Category : {{shoe.category|titlecase}}</h3>
+                <h5>Rating : {{shoe.rating.rate}} / 5 out of {{shoe.rating.count}} ratings.</h5>  <br>
+                <button class="btn" (click)="add(shoe)">Add to Cart</button> <br> <br>
+                <h5>Product Details :</h5>
+                <hr class="w-25">
+                <p>{{shoe.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

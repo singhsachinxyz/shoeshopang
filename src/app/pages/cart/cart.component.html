@@ -1,0 +1,37 @@
+<div class="container text-center" *ngIf="!showCart" style="color: rgb(4, 4, 109);">
+    <img class="rounded-pill m-4 border border-primary" width="35%" src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/54b13147340145.Y3JvcCw0MDUsMzE3LDAsNDI.png" alt="">
+    <h3>Your Cart is Empty!</h3>
+    <h4>Add Items to it Now!</h4>
+    <button class="btn btn-primary text-dark" routerLink="/shop">Shop Now!!</button><br>
+
+</div>
+<div class="container text-center my-4" *ngIf="showCart">
+
+    <table class="table table-info table-striped table-bordered">
+        <thead>
+            <tr class="text-center">
+                <th scope="col">Sr No.</th>
+                <th scope="col">Image</th>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of Products, let i=index" class="text-center">
+                <td>{{i+1}}</td>
+                <td><img src="{{item.image}}" alt="image" height="80px"></td>
+                <td>{{item.title}}</td>
+                <td>{{item.price|currency:'INR'}}</td>
+                <td><button class="btn btn-primary text-dark" (click)="remove(item)">Remove</button></td>
+            </tr>
+            <tr  class="text-center">
+                <td colspan="2"></td>
+                <td>Grand Total</td>
+                <td>{{total|currency:'INR'}}</td>
+                <td><button class="btn btn-danger text-dark" (click)="clear()">Empty Cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary text-dark">Proceed To Checkout</button>
+</div>

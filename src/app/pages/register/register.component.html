@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="text-center m-auto w-50 mt-3">
+        <h1>Registration Form</h1>
+        <hr class="w-50 m-auto mb-5">
+
+        <form [formGroup]="registerForm">
+            Name:
+            <input type="text" #name [ngClass]="{'is-invalid':registerForm.controls.name.invalid && registerForm.controls.name.touched,
+            'is-valid':registerForm.controls.name.valid}" class="form-control" formControlName="name"> 
+            <p class="text-danger" *ngIf="registerForm.controls.name.invalid && registerForm.controls.name.touched">*This field is required</p>
+            <!-- {{fname.className}} <br> -->
+            E-mail:
+            <input type="text" [ngClass]="{'is-invalid':registerForm.controls.email.invalid && registerForm.controls.email.touched,
+            'is-valid':registerForm.controls.email.valid}" formControlName="email" class="form-control">
+            <p class="text-danger" *ngIf="registerForm.controls.email.invalid && registerForm.controls.email.touched">*This field is required.</p>
+            Password:
+            <input type="text" [ngClass]="{'is-invalid':registerForm.controls.pass.invalid && registerForm.controls.pass.touched,
+            'is-valid':registerForm.controls.pass.valid}" formControlName="pass" class="form-control">
+            <p class="text-danger fs-6" *ngIf="registerForm.controls.pass.invalid && registerForm.controls.pass.touched">
+                *Password should contain at least one uppercase character, one lowercase character, one digit and one symbol(@#$%&) and length between 8 to 20 characters.</p>
+            Phone:
+            <input type="text" [ngClass]="{'is-invalid':registerForm.controls.phone.invalid && registerForm.controls.phone.touched,
+            'is-valid':registerForm.controls.phone.valid}" formControlName="phone" class="form-control">
+            <p class="text-danger" 
+            *ngIf="registerForm.controls.phone.errors?.['minlength']">Entered Contact is less than 10 digits</p>
+            <p class="text-danger" 
+            *ngIf="registerForm.controls.phone.errors?.['maxlength']">Entered Contact is more than 10 digits</p>
+            <button (click)="register(registerForm.value)" class="btn btn-primary mt-3">Register</button>
+        </form>
+    </div>
+</div>

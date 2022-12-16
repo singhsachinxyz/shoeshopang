@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light px-4" style="background-color: rgb(186, 210, 223);">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-2" routerLink="home"><img src="https://img.freepik.com/free-vector/running-shoes-cartoon-illustration-flat-cartoon-style_138676-2849.jpg?w=740&t=st=1670322946~exp=1670323546~hmac=c9ccc6ea5f34de7dded5c4cfcf01ba1a055ea5dab58f5020fdca9c1b1512fdc2" alt="logo" height="40px" class="me-2 rounded"><span style="color: rgb(4, 4, 109);">Shoe-</span>Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5 text-center px-5" >
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="shop">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="cart">Cart<div *ngIf="button[0].logout" class="badge rounded-pill mx-1">{{no[0].no}}</div></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="aboutus">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="home" (click)="logout()" *ngIf="button[0].logout">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="register" *ngIf="button[0].login">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="login" *ngIf="button[0].login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
